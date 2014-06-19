@@ -1,0 +1,55 @@
+---
+title       : 2010 Census - Web based reactive graphical interface
+subtitle    : cousera project - June 2014
+author      : Ami
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+## Source of Data 
+
+### 2010 Census data
+
+Looking at the census data is a hard task:
+```{r}
+data<-readRDS("./data/counties.rds")
+
+data[1:5,1:6]
+```
+
+--- .class #id 
+
+## Data Exploration
+
+Even looking at the summary stats is not easy:
+
+```{r}
+summary(data)
+```
+
+---
+
+## The Interactive Graphical Web App
+
+Instead, I have created a web-interface to graphically explore the data and get graphs like:
+
+```{r fig.width=7, fig.height=6}
+white<-data$white
+hist(white)
+```
+
+---
+
+## Now it is simple and easy to explore the data
+
+
+### Easy to launch:
+
+###### library(shiny)
+###### runGitHub ("project", username="amimiz")
+
+
